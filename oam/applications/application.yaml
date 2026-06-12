@@ -5,12 +5,15 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: chatdemo
+  annotations:
+    app.oam.dev/publishVersion: "a5b5a79fd4b4a3c8a4d779dfeeb96fc3c6387339"
   namespace: default
 spec:
   components:
-  - name: chatdemo-bot
-    type: rasa-chatbot
-    properties:
-      name: chatdemo-bot
-      rasaImage: docker.io/socrates12345/chatdemo-bot-rasa:latest
-      actionsImage: docker.io/socrates12345/chatdemo-bot-actions:latest
+    - name: chatdemo-bot
+      type: rasa-chatbot
+      properties:
+        name: chatdemo-bot
+        rasaImage: docker.io/socrates12345/chatdemo-bot-rasa:latest
+        actionsImage: docker.io/socrates12345/chatdemo-bot-actions:latest
+        image: healthidpuaeacr.azurecr.io/chatdemo-bot:a5b5a79
