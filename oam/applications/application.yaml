@@ -1,19 +1,19 @@
-# RASA-CONTAINER (#178) runtime e2e: first rasa-chatbot instantiation on the
-# prebaked rasa-base image + variant-only repo. Images are the names the chat
-# CI builds (<svc>-rasa / <svc>-actions); day-0 placeholders resolve after CI.
 apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: chatdemo
   annotations:
-    app.oam.dev/publishVersion: "rasa-mem2gi"
+    app.oam.dev/publishVersion: rasa-mem2gi-v2
   namespace: default
 spec:
   components:
-    - name: chatdemo-bot
-      type: rasa-chatbot
-      properties:
-        name: chatdemo-bot
-        rasaImage: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
-        actionsImage: healthidpuaeacr.azurecr.io/chatdemo-bot-actions:c8ff472
-        image: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
+  - name: chatdemo-bot
+    type: rasa-chatbot
+    properties:
+      name: chatdemo-bot
+      rasaImage: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
+      actionsImage: healthidpuaeacr.azurecr.io/chatdemo-bot-actions:c8ff472
+      image: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
+      resources:
+        cpu: 500m
+        memory: 2Gi
