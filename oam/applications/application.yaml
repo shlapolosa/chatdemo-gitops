@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: chatdemo
   annotations:
-    app.oam.dev/publishVersion: rasa-mem2gi-v2
+    app.oam.dev/publishVersion: rasa-mem3gi
   namespace: default
 spec:
   components:
@@ -16,4 +16,4 @@ spec:
       image: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
       resources:
         cpu: 500m
-        memory: 2Gi
+        memory: 3Gi
