@@ -6,7 +6,7 @@ kind: Application
 metadata:
   name: chatdemo
   annotations:
-    app.oam.dev/publishVersion: "c8ff4729326a984eec92c16ef836b63b6acea197"
+    app.oam.dev/publishVersion: "rasa-acr-pin-c8ff472"
   namespace: default
 spec:
   components:
@@ -14,6 +14,6 @@ spec:
       type: rasa-chatbot
       properties:
         name: chatdemo-bot
-        rasaImage: docker.io/socrates12345/chatdemo-bot-rasa:latest
-        actionsImage: docker.io/socrates12345/chatdemo-bot-actions:latest
+        rasaImage: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
+        actionsImage: healthidpuaeacr.azurecr.io/chatdemo-bot-actions:c8ff472
         image: healthidpuaeacr.azurecr.io/chatdemo-bot-rasa:c8ff472
