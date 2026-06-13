@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: chatdemo
   annotations:
-    app.oam.dev/publishVersion: rasa-mem3gi
+    app.oam.dev/publishVersion: rasa-startupprobe
   namespace: default
 spec:
   components:
